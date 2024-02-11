@@ -1,0 +1,22 @@
+{% load draw_menu %}
+
+<li>
+    <a href="{% if '/' in item.url %}
+                {{ item.url }}
+              {% else %}
+                {% url item.url %}
+              {% endif %}">
+              {% if item == active %}
+                <strong>{{ item.title }}</strong>
+              {% else %}
+                {{ item.title }}
+              {% endif %}
+            </a>
+    {% if current_children != None %}
+      <ul>
+        {% for c in current_children %}
+            {% draw_menu_item c active children %}
+        {% endfor %}
+     </ul>
+    {% endif %}
+ </li>

@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Tree-Style Menu {% endblock %}
+
+{% load draw_menu %}
+
+{% block content %}
+
+{% draw_menu 'menu_1' request %}
+
+{% comment %} {% draw_menu 'menu_2' request %} {% endcomment %}
+
+{% endblock %}
+
+
+
+
